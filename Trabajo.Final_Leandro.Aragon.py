@@ -12,17 +12,20 @@
 
 # Autor: Leandro Oscar Aragon Alonso. Mayo de 2024, Curso IBM de Python Full Stack.
 
+
 # -----------------------------------
 
 # DEFINICIÓN DE CLASES
 
 # -----------------------------------
 
-# Creamos una clase que contiene los menus, destinados a facilitar la navegación del usuario
 
+# Creamos una clase que contiene los menus, destinados a facilitar la navegación del usuario
 
 from datetime import datetime
 
+
+# Creamos una clase para agrupar los menus, destinados a facilitar la navegación del usuario
 
 class Menu:
 
@@ -131,7 +134,7 @@ class Menu:
         return
     
 
-# Creamos una clase asociada a las tareas de la tienda
+# Creamos una clase para agrupar las tareas de la tienda (listadas más abajo)
 
 class Tareas:
 
@@ -176,7 +179,7 @@ class Tareas:
         
             self.estado = "PENDIENTE"
 
-        return f"TAREA: {self.nombre}\n\n   • Estado: {self.estado}\n   • Prioridad: {self.prioridad}\n   • Encargado: {self.responsable}\n   • Fecha límite: {self.fecha_fin}\n   • Observaciones: {self.observaciones}\n"
+        return f"TAREA: {self.nombre}\n\n   • Estado: {self.estado}\n   • Prioridad: {self.prioridad}\n   • Encargado: {self.responsable}\n   • Fecha límite: {self.fecha_fin}\n   • Observaciones: {self.observaciones}"
     
 
     # Definimos un método para imprimir la lista (ya ordenada por fecha límite)
@@ -205,7 +208,8 @@ class Tareas:
     
         pass
     
-    
+
+# Creamos una clase para agrupar las operaciones requeridas por el ejercicio práctico
 
 class Operaciones():
 
@@ -310,11 +314,11 @@ class Operaciones():
             
             # Se imprimen los detalles de la nueva tarea
             
-            print(" ")
+            print(" ") 
             print(nueva_tarea.repr_completa())
 
         
-            input (f"\n> Tarea creada con éxito (PRESIONA ENTER PARA CONTINUAR)")
+            input (f"> Tarea creada con éxito (PRESIONA ENTER PARA CONTINUAR)")
             
 
         return Menu.bienvenida ()
@@ -524,9 +528,9 @@ class Operaciones():
 # Pasamos a enumerar las instancias, en este caso tareas: 
 
 lista_tareas = [
-Tareas("Devolver el pedido #5059 a EMI Music", True, "ALTA", datetime(2024, 5, 25), "Juan", "Incluír el albrán firmado"),
+Tareas("Devolver el pedido #5059 a EMI Music", True, "ALTA", datetime(2024, 5, 25), "Juan", "Incluír el albarán firmado"),
 Tareas("Cambiar los discos del expositor exterior", True, "MEDIA", datetime(2024, 6, 1), "Frank", "Poner el nuevo disco de AC/DC en primera fila"),
-Tareas("Realizar un pedido a Totem Cat Records", True, "BAJA", datetime(2025, 1, 12), "Frank", "Solicitar 15 copias de Church of Misery"),
+Tareas("Hacer un pedido a Totem Cat Records", True, "BAJA", datetime(2025, 1, 12), "Frank", "Solicitar 15 copias de Church of Misery"),
 Tareas("Actualizar la base de datos", False, "BAJA", datetime(2024, 8, 13), "Frank", "Añadir los lanzamientos del Record Store Day"),
 Tareas("Realizar entrevistas para Social Media Manager", True, "MEDIA", datetime(2024, 5, 28), "Juan", "Revisar los mensajes privados de Facebook para obtener los CV")
 ]
@@ -539,4 +543,8 @@ lista_ordenada = sorted(lista_tareas, key=lambda Tareas: Tareas.fecha_fin)
 
 # -----------------------------------
 
+# Finalmente, hacemos correr el programa con una sola llamada a la función del menu de bienvenida
+
 Menu.bienvenida()
+
+# NOTA: En caso de seleccionar ("Salir del programa") el mismo finalizará
